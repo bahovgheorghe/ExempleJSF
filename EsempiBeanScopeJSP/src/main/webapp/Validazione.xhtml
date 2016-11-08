@@ -1,0 +1,52 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core">
+
+<h:head>
+	<style>
+.colori {
+	color: red;
+}
+</style>
+</h:head>
+
+<h:body>
+
+	<h:form>
+	
+		<!-- con l'attributo label="User" e required="true" stampo un messaggio d'errore di defaul. Se voglio avere un messaggio d'errore 
+	         personale devo utilizare l'attriburo requiredMessage="messaggio d'errore"  -->
+         Username: <h:inputText id="username" value="#{utente.username}"
+			label="User" required="true"
+			requiredMessage="Questo campo e' obbligatorio" />
+
+		<h:message for="username" styleClass="colori" />
+		<br />
+         Password: <h:inputSecret id="password"
+			value="#{utente.password}" />
+		<br />
+		
+		<!-- con l'attributo  validatorMessage="il mio messaggio" 
+			 con il Tag <f:validateLongRange minimum="29" maximum="31" /> stabilisco un limite al mio campo eta....
+		-->
+         Eta':     <h:inputText id="eta" value="#{utente.eta}"
+			label="Eta" validatorMessage="Il valore deve essere tra 29 e 31">
+			<f:validateLongRange minimum="29" maximum="31" />
+		</h:inputText>
+		
+		<!-- questo mi permette di stampare un messaggo: con l'attributo for="eta" dico dove devo controlare il messaggio.  -->
+		<h:message for="eta" styleClass="colori" />
+		<br />
+
+		<h:commandButton value="Entra" action="HomeCliente" />
+
+	</h:form>
+
+
+
+</h:body>
+</html>
