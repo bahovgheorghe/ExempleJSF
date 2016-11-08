@@ -1,0 +1,29 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core">
+
+<h:head>
+	<titile>Registrazione</titile>
+</h:head>
+<h:body>
+
+
+<h1>Registrazione Cliente</h1>
+
+<h:form>
+<!-- casela di input come in html.... Nel value do il riferimento al mio Bean"#{cliente.nome}"-->
+<p>Nome<h:inputText id="nome" value="#{c.nome}" placeholder="Nome"/></p>
+<p>Cognome<h:inputText id="cognome" value="#{c.cognome}" placeholder="Cognome"/></p>
+
+
+<h:commandButton value="RegistraCliente" action="confirmRegistration" />
+
+</h:form>
+
+
+</h:body>
+</html>
