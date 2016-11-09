@@ -36,10 +36,27 @@
          Eta':     <h:inputText id="eta" value="#{utente.eta}"
 			label="Eta" validatorMessage="Il valore deve essere tra 29 e 31">
 			<f:validateLongRange minimum="29" maximum="31" />
-		</h:inputText>
+		</h:inputText>	<h:message for="eta" styleClass="colori" /><br/>
+		
+		Cellulare: <h:inputText id="cellulare" 
+								value="#{utente.telefono}"
+								labe="Cell." 
+								validatorMessage="Inserire numero decve essere di qusto formato(xxx-xxxxxxx)">
+					<f:validateRegex pattern="\d{3}-\d{4}"/>
+					</h:inputText> 
+					<h:message for="cellulare" styleClass="colori" /><br/>
+					
+					
+		Codica Fiscale: <h:inputText id="codFiscale" 
+									value="#{utente.codFiscale}" 
+									abel="CodFiscale" 
+									validator="#{utente.validaCodFisc}">
+		
+						</h:inputText>			
+						<h:message for="codFiscale" />		
 		
 		<!-- questo mi permette di stampare un messaggo: con l'attributo for="eta" dico dove devo controlare il messaggio.  -->
-		<h:message for="eta" styleClass="colori" />
+	
 		<br />
 
 		<h:commandButton value="Entra" action="HomeCliente" />
